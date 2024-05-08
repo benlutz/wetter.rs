@@ -3,7 +3,9 @@
 ## Description
 
 This is a small Rust project called `wetter.rs`.  
-I used this project to gain my first experience with Rust.
+I used this project to gain my first experience with Rust. It's a simple CLI to fetch the current weather of a location using the Open Weather Map Api.
+
+This CLI allows users to input a location and retrieve the current weather information, including temperature, humidity, and weather conditions. It provides a convenient way to quickly check the weather without leaving the command line interface.
 
 ## Installation
 
