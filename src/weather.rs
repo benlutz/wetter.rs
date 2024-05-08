@@ -35,7 +35,7 @@ impl WeatherInfo {
     }
 
     pub fn print_weather_summary(&self) {
-        println!("Temperature: {}", self.get_temperature());
+        println!("Temperatur: {}", self.get_temperature());
 
         println!(
             "Wind: {}m/s {}",
