@@ -5,7 +5,7 @@ I used this project to gain my first experience with Rust.
 
 This CLI allows users to input a location and retrieve the current weather information, including temperature, humidity, and weather conditions. It provides a convenient way to quickly check the weather without leaving the command line interface.
 
-The project is heavily inspired by [wttr.in](https://github.com/chubin/wttr.in)
+The project is heavily inspired by [wttr.in](https://github.com/chubin/wttr.in).
 
 ## Installation
 

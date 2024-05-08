@@ -23,11 +23,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     if let Some(local_names) = &cities[0].local_names {
         if let Some(name) = local_names.get(&helpers::get_language()) {
-            println!(
-                "{}: {}",
-                name.as_ref().unwrap(),
-                cities[0].get_current_weather().await?.weather[0].description
-            );
+            let weather_info = cities[0].get_current_weather().await?;
+
+            println!("Wetter in {}:", name.as_ref().unwrap());
+            weather_info.print_weather_summary();
         }
     }
 

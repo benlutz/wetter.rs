@@ -6,7 +6,11 @@ use crate::{city::City, helpers::get_language, weather::WeatherInfo};
 pub async fn get_open_weather_map_data(url: &str) -> Result<String, Box<dyn std::error::Error>> {
     match env::var("OPEN_WEATHER_API_KEY") {
         Ok(api_key) => {
-            let params = [("appid", &api_key), ("lang", &get_language())];
+            let params = [
+                ("appid", &api_key),
+                ("lang", &get_language()),
+                ("units", &String::from("metric")),
+            ];
             let url = Url::parse_with_params(url, &params)?;
 
             let response: reqwest::Response = reqwest::get(url).await?;
@@ -37,6 +41,6 @@ pub async fn get_current_weather(city: &City) -> Result<WeatherInfo, Box<dyn std
     );
 
     let response = get_open_weather_map_data(&api_url).await?;
-    let weather: WeatherInfo = serde_json::from_str(&response)?;
-    Ok(weather)
+    let weather_info: WeatherInfo = serde_json::from_str(&response)?;
+    Ok(weather_info)
 }
