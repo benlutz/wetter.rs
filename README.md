@@ -1,7 +1,5 @@
 # wetter.rs
 
-## Description
-
 This is a small Rust project called `wetter.rs`.  
 I used this project to gain my first experience with Rust.
 
