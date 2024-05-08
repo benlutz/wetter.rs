@@ -12,10 +12,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let query = "Wien";
     let cities: Vec<City> = openweather::search_for_city(query).await?;
 
-    println!(
-        "{}: {}",
-        cities[0].name,
-        cities[0].get_current_weather().await?.weather[0].description
-    );
+    if let Some(local_names) = &cities[0].local_names {
+        if let Some(name) = local_names.get(&helpers::get_language()) {
+            println!(
+                "{}: {}",
+                name.as_ref().unwrap(),
+                cities[0].get_current_weather().await?.weather[0].description
+            );
+        }
+    }
+
     Ok(())
 }
