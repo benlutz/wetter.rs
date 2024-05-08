@@ -13,7 +13,7 @@ To run this project, make sure you have Rust installed. You can install Rust by 
 
 To use this project, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/wetter.rs.git`
+1. Clone the repository: `git clone https://github.com/benlutz/wetter.rs.git`
 2. Navigate to the project directory: `cd wetter.rs`
 3. Retrieve your own [Open Weather Map Api Key](https://openweathermap.org/)
 4. Rename `env.sample` to `.env` and add your api key
